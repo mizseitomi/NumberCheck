@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Számkalkulátor
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Adjon meg egy számot: ");
+            string strng = Console.ReadLine();
+            Console.WriteLine();
+            //Számjegyek száma
+            int hossz = strng.Length;
+            Console.Write("A szám: {0} számjegyű, ", hossz);
+            int szam = int.Parse(strng);
+            //Páros, vagy páratlan
+            if (szam == 0) Console.Write("0 tehát nem páros és nem páratlan, ");
+            else if (szam % 2 == 0) Console.Write("páros, ");            
+            else Console.Write("páratlan, ");
+            //Pozitív/negatív
+            if (szam > 0) Console.Write("pozitív, ");
+            else if (szam < 0) Console.Write("negatív, ");
+            else Console.Write("0 tehát semleges, ");
+            //Prímszám
+            int prim = 0;
+            for (int i = 1; i <= szam; i++)
+            {
+                if (szam % i == 0) prim++;
+                else { }
+            }
+            if (prim == 2) Console.Write("prímszám");
+            else Console.Write("nem prímszám");
+            //A szám osztói
+            int oszto;
+            Console.Write("\nA szám osztói: ");
+            for (oszto = 1; oszto < szam; oszto++)
+            {
+                if (szam % oszto == 0)
+                {
+                    Console.Write(oszto + ", ");
+                }
+
+            }
+            Console.Write(szam);
+
+
+            Console.ReadLine();
+        }
+    }
+}
